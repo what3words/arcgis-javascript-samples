@@ -12,7 +12,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- ArcGIS CSS -->
-  <link rel="stylesheet" href="//js.arcgis.com/3.15/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.17/esri/css/esri.css">
   <link rel="stylesheet" href="bower_components/bootstrap-map-js/src/css/bootstrapmap.css">
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -166,7 +166,7 @@
   <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
   <!-- Include all  plugins or individual files as needed -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="//js.arcgis.com/3.15/"></script>
+  <script src="//js.arcgis.com/3.17/"></script>
   <script>
     require([
       'esri/map',
@@ -197,6 +197,7 @@
       var markerLayer = new GraphicsLayer();
       map.addLayer(markerLayer);
 
+      // update proxy URL here !
       urlUtils.addProxyRule({
         urlPrefix: "arcgis.what3words.com",
         proxyUrl: "/esriproxy/proxy.php"
@@ -238,7 +239,7 @@
           $(".navbar-collapse.in").collapse("hide");
           return false;
         });
-        
+
       }); //-- jQuery --
     }); //-- dojo --
   </script>
