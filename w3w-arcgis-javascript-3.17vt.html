@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
   <title>ArcGIS for JS Sample</title>
   <link rel="shortcut icon" href="//map.what3words.com/favicon.ico">
-  <link rel="stylesheet" href="//js.arcgis.com/3.15/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.17/esri/css/esri.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700">
   <style>
     html,
@@ -45,7 +45,7 @@
       }]
     };
   </script>
-  <script src="//js.arcgis.com/3.15/"></script>
+  <script src="//js.arcgis.com/3.17/"></script>
   <script>
     require([
       'esri/map',
@@ -98,16 +98,16 @@
             var data = {
               'key': key,
               'lang': lang,
-              'position': '\'' + p.y + ',' + p.x + '\''
+              'coords': p.y + ',' + p.x
             };
-            $.post('http://api.what3words.com/position', data, function(response) {
+            $.get('https://api.what3words.com/v2/reverse', data, function(response) {
               if (response.error) {
                 console.log(response);
                 if (response.message) {
                   $('#what3words').text(response.message);
                 }
               } else {
-                var w3w = response.words[0] + '.' + response.words[1] + '.' + response.words[2];
+                var w3w = response.words;
                 $('#what3words').text(w3w);
               }
             });

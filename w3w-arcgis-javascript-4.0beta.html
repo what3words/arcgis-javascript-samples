@@ -217,16 +217,16 @@
             var data = {
               'key': key,
               'lang': lang,
-              'position': '\'' + p.y + ',' + p.x + '\''
+              'coords': p.y + ',' + p.x
             };
-            $.post('https://api.what3words.com/position', data, function(response) {
+            $.get('https://api.what3words.com/v2/reverse', data, function(response) {
               if (response.error) {
                 console.log(response);
                 if (response.message) {
-                  $('#what3words-address').text(response.message);
+                  $('#what3words').text(response.message);
                 }
               } else {
-                var w3w = response.words[0] + '.' + response.words[1] + '.' + response.words[2];
+                var w3w = response.words;
                 $('#what3words-address').text(w3w);
               }
             });
