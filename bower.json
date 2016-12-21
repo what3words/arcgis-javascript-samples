@@ -1,0 +1,20 @@
+{
+  "name": "arcgis-javascript-samples",
+  "homepage": "https://github.com/what3words/arcgis-javascript-samples",
+  "authors": [
+    "arnaud ferrand <arnaud@what3words.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-map-js": "^0.0.2"
+  }
+}
