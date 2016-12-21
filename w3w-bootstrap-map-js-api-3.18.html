@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Lock viewport to prevent scaling -->
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>ArcGIS for JS Sample</title>
+  <link rel="shortcut icon" href="//map.what3words.com/favicon.ico">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- ArcGIS CSS -->
+  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/css/esri.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-map-js/src/css/bootstrapmap.css">
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    .map {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100px;
+      text-align: left;
+    }
+
+    .navbar-inverse .navbar-nav>li>a {
+      color: #ccc;
+    }
+
+    .navbar-inverse .navbar-brand {
+      color: #ddd;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #what3words-address {
+      color: #fff;
+      text-align: center;
+    }
+    /* ------------------------------------------------
+    RESPONSIVE CSS
+   -------------------------------------------------- */
+
+    @media (min-width: 768px) {}
+
+    @media (max-width: 767px) {
+      h3 {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Navbar - fluid container to consume full width of screen -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="fluid-container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" data-toggle="modal" data-target="#myModal">esri Bootstrap Map JS</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <!-- Add nav elements with some tooltips -->
+        <ul class="nav navbar-nav navbar-right">
+          <li data-toggle="tooltip" title="About" data-placement="bottom">
+            <a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;About&nbsp;&nbsp;</a>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <!--/.navbar -->
+
+  <!-- Container - fluid container to consume full width of screen -->
+  <div class="fluid-container">
+    <div id="map"></div>
+  </div>
+
+  <!-- Navbar - fluid container to consume full width of screen -->
+  <nav class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="container" id="what3words-container">
+      <h3 id="what3words-address"></h3>
+    </div>
+  </nav>
+  <!--/.navbar -->
+
+  <!-- .modal about -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">ArcGIS for Javascript with what3words Sample</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="nav nav-tabs" id="aboutTabs">
+            <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;About</a></li>
+          </ul>
+          <div class="tab-content" id="aboutTabsContent">
+            <div class="tab-pane fade active in" id="about">
+              <p></p>
+              <p>This sample application demonstrates integration of esri <a href="http://esri.github.io/bootstrap-map-js/demo/index.html" target="_blank">Bootstrap-map-js</a> with <a href="http://what3words.com" target="_blank">what3words</a> API.</p>
+              <p>If you need more informations visit the developer web sites:
+                <ul>
+                  <li>what3words <a href="http://developer.what3words.com" target="_blank">developer.what3words.com</a></li>
+                  <li>ArcGIS for Javascript <a href="http://js.arcgis.com" target="_blank">developers.arcgis.com/javascript</a></li>
+                  <li>Bootstrap-map-js <a href="https://github.com/Esri/bootstrap-map-js" target="_blank">github/bootstrap-map-js</a></li>
+                </ul>
+                <br />
+                <br />This application also use <a href="http://jquery.com/" target="_blank">JQuery</a>, <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font-Awesome</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+
+  <script type="text/javascript">
+    var pckgPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+    var dojoConfig = {
+      //The location.pathname.replace() logic below may look confusing but all its doing is
+      // enabling us to load the api from a CDN and load local modules from the correct location.
+      packages: [{
+        name: 'app',
+        location: pckgPath + '/js'
+      }, {
+        name: 'bootstrap',
+        location: pckgPath + '/bower_components/bootstrap-map-js/src/js'
+      }]
+    };
+  </script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <!-- jQuery (for Bootstrap's JavaScript plugins).  -->
+  <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+  <!-- Include all  plugins or individual files as needed -->
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="//js.arcgis.com/3.15/"></script>
+  <script>
+    require([
+      'esri/map',
+      'bootstrap/bootstrapmap',
+      'esri/layers/VectorTileLayer',
+      'esri/symbols/PictureMarkerSymbol',
+      'esri/layers/GraphicsLayer',
+      'esri/graphic',
+      'esri/geometry/Point',
+      'esri/SpatialReference',
+      'esri/geometry/webMercatorUtils',
+      'app/config',
+      'dojo/domReady!'
+    ], function(Map, BootstrapMap, VectorTileLayer, PictureMarkerSymbol, GraphicsLayer, Graphic, Point, SpatialReference, webMercatorUtils, Config) {
+
+      var lang = 'en'; // default language
+      var key = Config.key; // YOUR API KI
+      var graphic;
+
+      var map = BootstrapMap.create('map', {
+        basemap: 'national-geographic',
+        zoom: 4,
+        center: [5.73, 45.2] //sets the center point of view with lon/lat
+      });
+      var w3wmarkerSymbol = new PictureMarkerSymbol({
+        url: 'images/bullseye-02.png',
+        width: 65,
+        height: 65,
+      });
+      var markerLayer = new GraphicsLayer();
+      map.addLayer(markerLayer);
+      // Use jQuery here for UI handlers
+      $(document).ready(function() {
+
+        function handleMapClick(event) {
+          if (event.mapPoint) {
+            if (graphic) {
+              graphic.setGeometry(event.mapPoint);
+            } else {
+              graphic = new Graphic(event.mapPoint, w3wmarkerSymbol);
+              map.graphics.add(graphic);
+            }
+            var p = webMercatorUtils.webMercatorToGeographic(event.mapPoint);
+            var data = {
+              'key': key,
+              'lang': lang,
+              'coords': p.y + ',' + p.x
+            };
+            $.get('https://api.what3words.com/v2/reverse', data, function(response) {
+              if (response.error) {
+                console.log(response);
+                if (response.message) {
+                  $('#what3words-address').text(response.message);
+                }
+              } else {
+                var w3w = response.words;
+                $('#what3words-address').text(w3w);
+              }
+            });
+
+          }
+        }
+        // handle map click to update w3w marker and words
+        map.on('click', handleMapClick);
+
+        $("#about-btn").click(function() {
+          $("#aboutModal").modal("show");
+          $(".navbar-collapse.in").collapse("hide");
+          return false;
+        });
+      }); //-- jQuery --
+    }); //-- dojo --
+  </script>
+
+</body>
+
+</html>
