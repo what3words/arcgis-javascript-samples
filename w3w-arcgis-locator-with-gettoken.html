@@ -12,7 +12,11 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- ArcGIS CSS -->
+<<<<<<< HEAD
   <link rel="stylesheet" href="//js.arcgis.com/3.17/esri/css/esri.css">
+=======
+  <link rel="stylesheet" href="//js.arcgis.com/3.18/esri/css/esri.css">
+>>>>>>> prompts for w3w API key and arcgis locator password
   <link rel="stylesheet" href="bower_components/bootstrap-map-js/src/css/bootstrapmap.css">
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -169,7 +173,11 @@
   <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
   <!-- Include all  plugins or individual files as needed -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
   <script src="//js.arcgis.com/3.17/"></script>
+=======
+  <script src="//js.arcgis.com/3.18/"></script>
+>>>>>>> prompts for w3w API key and arcgis locator password
   <script>
     require([
       'esri/map',
@@ -185,6 +193,13 @@
       'app/config',
       'dojo/domReady!'
     ], function(Map, BootstrapMap, PictureMarkerSymbol, GraphicsLayer, Graphic, Point, SpatialReference, webMercatorUtils, Locator, urlUtils, Config) {
+        if (!localStorage.getItem('w3w.arcgis.password')) {
+          localStorage.setItem(
+            'w3w.arcgis.password',
+            prompt('What is your Arcgis w3w password?')
+          );
+          Config.password = localStorage.getItem('w3w.arcgis.password');
+        }
 
       var lang = 'en'; // default language
       var key = Config.key; // YOUR API KI
