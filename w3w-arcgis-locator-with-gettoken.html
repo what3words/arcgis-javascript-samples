@@ -204,10 +204,10 @@
       var markerLayer = new GraphicsLayer();
       map.addLayer(markerLayer);
 
-      urlUtils.addProxyRule({
-        urlPrefix: "arcgis.what3words.com",
-        proxyUrl: "/esriproxy/proxy.php"
-      });
+      // urlUtils.addProxyRule({
+      //   urlPrefix: "arcgis.what3words.com",
+      //   proxyUrl: "/esriproxy/proxy.php"
+      // });
 
       var locator = new Locator('https://arcgis.what3words.com/w3w/rest/services/what3words_EN_English/GeocodeServer', {});
 
