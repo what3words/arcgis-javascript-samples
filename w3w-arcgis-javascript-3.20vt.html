@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
   <title>ArcGIS for JS Sample</title>
   <link rel="shortcut icon" href="//map.what3words.com/favicon.ico">
-  <link rel="stylesheet" href="//js.arcgis.com/3.17/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.20/esri/css/esri.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:400,700">
   <style>
     html,
@@ -45,7 +45,7 @@
       }]
     };
   </script>
-  <script src="//js.arcgis.com/3.17/"></script>
+  <script src="//js.arcgis.com/3.20/"></script>
   <script>
     require([
       'esri/map',
@@ -77,7 +77,7 @@
 
       //The URL referenced in the constructor may point to a style url JSON (as in this sample)
       //or directly to a vector tile service
-      var vtlayer = new VectorTileLayer('https://www.arcgis.com/sharing/rest/content/items/f96366254a564adda1dc468b447ed956/resources/styles/root.json');
+      var vtlayer = new VectorTileLayer('https://www.arcgis.com/sharing/rest/content/items/bf79e422e9454565ae0cbe9553cf6471/resources/styles/root.json');
       map.addLayer(vtlayer);
 
       var markerLayer = new GraphicsLayer();

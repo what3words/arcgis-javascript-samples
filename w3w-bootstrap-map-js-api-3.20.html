@@ -12,7 +12,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- ArcGIS CSS -->
-  <link rel="stylesheet" href="//js.arcgis.com/3.17/esri/css/esri.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.20/esri/css/esri.css">
   <link rel="stylesheet" href="bower_components/bootstrap-map-js/src/css/bootstrapmap.css">
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -130,7 +130,7 @@
               <p>This sample application demonstrates integration of esri <a href="http://esri.github.io/bootstrap-map-js/demo/index.html" target="_blank">Bootstrap-map-js</a> with <a href="http://what3words.com" target="_blank">what3words</a> API.</p>
               <p>If you need more informations visit the developer web sites:
                 <ul>
-                  <li>what3words <a href="http://developer.what3words.com" target="_blank">developer.what3words.com</a></li>
+                  <li>what3words <a href="https://what3words.com/developers" target="_blank">what3words.com/developers</a></li>
                   <li>ArcGIS for Javascript <a href="http://js.arcgis.com" target="_blank">developers.arcgis.com/javascript</a></li>
                   <li>Bootstrap-map-js <a href="https://github.com/Esri/bootstrap-map-js" target="_blank">github/bootstrap-map-js</a></li>
                 </ul>
@@ -171,7 +171,7 @@
   <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
   <!-- Include all  plugins or individual files as needed -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="//js.arcgis.com/3.17/"></script>
+  <script src="//js.arcgis.com/3.20/"></script>
   <script>
     require([
       'esri/map',
@@ -224,7 +224,7 @@
               if (response.error) {
                 console.log(response);
                 if (response.message) {
-                  $('#what3words').text(response.message);
+                  $('#what3words-address').text(response.message);
                 }
               } else {
                 var w3w = response.words;

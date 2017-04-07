@@ -1,14 +1,14 @@
 # arcgis-javascript-samples
 These applications demonstrate reverse geocoding with [what3words](//what3words.com)  using [ArcGIS API for JavaScript](//js.arcgis.com).
 
-#### ArcGIS API 3.18 using vector tile layer
-[![app3vt screenshot](./assets/api315vt.png)](./w3w-arcgis-javascript-3.18vt.html)
+#### ArcGIS API 3.20 using vector tile layer
+[![app3vt screenshot](./assets/api315vt.png)](./w3w-arcgis-javascript-3.20vt.html)
 
 #### ArcGIS API 4.0 beta 3
 [![app4 screenshot](./assets/api4.png)](http://what3words.github.io/./w3w-arcgis-javascript-4.0beta.html)
 
-#### Bootstrap-map-js and ArcGIS API 3.18
-[![app screenshot](./assets/bootstrapmap.png)](./w3w-bootstrap-map-js-api-3.18.html)
+#### Bootstrap-map-js and ArcGIS API 3.20
+[![app screenshot](./assets/bootstrapmap.png)](./w3w-bootstrap-map-js-api-3.20.html)
 
 #### Using ArcGIS Locator with a Proxy Page
 [![app screenshot](./assets/locator.png)](./w3w-arcgis-locator-with-proxypage.html)
