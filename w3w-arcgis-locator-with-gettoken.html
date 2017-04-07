@@ -190,6 +190,7 @@
       var pass = Config.password;
       var token;
       var graphic;
+      var locator;
 
       var map = BootstrapMap.create('map', {
         basemap: 'topo',
@@ -203,13 +204,6 @@
       });
       var markerLayer = new GraphicsLayer();
       map.addLayer(markerLayer);
-
-      // urlUtils.addProxyRule({
-      //   urlPrefix: "arcgis.what3words.com",
-      //   proxyUrl: "/esriproxy/proxy.php"
-      // });
-
-      var locator = new Locator('https://arcgis.what3words.com/w3w/rest/services/what3words_EN_English/GeocodeServer', {});
 
       // Use jQuery here for UI handlers
       $(document).ready(function() {
@@ -230,6 +224,7 @@
               }
             } else {
               token = obj.token;
+              locator = new Locator('https://arcgis.what3words.com/w3w/rest/services/what3words_EN_English/GeocodeServer?token='+token);
             }
           });
         }
