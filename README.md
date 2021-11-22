@@ -1,4 +1,10 @@
-# arcgis-javascript-samples
+
+
+# [DEPRECATED] arcgis-javascript-samples
+Please use [this repository](https://github.com/what3words/w3w-arcgis-javascript-samples) to learn how to integrate the what3words locator in [ArcGIS API for JavaScript](//js.arcgis.com).
+
+
+------
 These applications demonstrate reverse geocoding with [what3words](//what3words.com)  using [ArcGIS API for JavaScript](//js.arcgis.com).
 
 #### ArcGIS API 3.20 using vector tile layer
